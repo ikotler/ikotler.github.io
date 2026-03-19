@@ -204,11 +204,7 @@ const writing = [
             <ul>
               {group.items.map((item) => (
                 <li>
-                  {item.url ? (
-                    <a href={item.url} target="_blank" rel="noopener">{item.title}</a>
-                  ) : (
-                    <span>{item.title}</span>
-                  )}
+                  {item.url ? <a href={item.url} target="_blank" rel="noopener">{item.title}</a> : <span>{item.title}</span>}
                   <span class="venue"> — {item.venue}</span>
                 </li>
               ))}
@@ -218,8 +214,8 @@ const writing = [
       }
     </main>
     <Footer />
-  </body>
-</html>
+  </body></html
+>
 
 <style>
   .subtitle {

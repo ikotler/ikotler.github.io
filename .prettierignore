@@ -1,0 +1,4 @@
+# Astro plugin reformats inline <a> tags to multiline, introducing
+# whitespace that renders as extra spaces in link text
+src/pages/talks.astro
+src/pages/writing.astro

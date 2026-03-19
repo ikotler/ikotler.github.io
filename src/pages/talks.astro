@@ -282,11 +282,7 @@ const talks = [
             <ul>
               {group.items.map((talk) => (
                 <li>
-                  {talk.url ? (
-                    <a href={talk.url} target="_blank" rel="noopener">{talk.title}</a>
-                  ) : (
-                    <span>{talk.title}</span>
-                  )}
+                  {talk.url ? <a href={talk.url} target="_blank" rel="noopener">{talk.title}</a> : <span>{talk.title}</span>}
                   {talk.coauthor && <span class="coauthor"> w/ {talk.coauthor}</span>}
                   <span class="venue"> @ {talk.venue}</span>
                 </li>
@@ -297,8 +293,8 @@ const talks = [
       }
     </main>
     <Footer />
-  </body>
-</html>
+  </body></html
+>
 
 <style>
   .subtitle {
