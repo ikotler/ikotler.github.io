@@ -1,0 +1,351 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+const title = 'Talks | Itzik Kotler';
+const description = 'Conference talks and presentations by Itzik Kotler.';
+
+const talks = [
+  {
+    year: 2019,
+    items: [
+      {
+        title: 'BackdorOS: The In-memory OS for Red Teams',
+        url: 'https://www.ikotler.org/docs/BackdorOS.pdf',
+        venue: 'Texas Cyber Summit',
+      },
+      {
+        title: 'Process Injection Techniques - Gotta Catch Them All',
+        url: 'https://defcon.org/html/defcon-27/dc-27-speakers.html#Kotler',
+        coauthor: 'Amit Klein',
+        venue: 'DEF CON',
+      },
+      {
+        title: 'Process Injection Techniques - Gotta Catch Them All',
+        url: 'https://www.blackhat.com/us-19/briefings/schedule/#process-injection-techniques---gotta-catch-them-all-16010',
+        coauthor: 'Amit Klein',
+        venue: 'Black Hat USA',
+      },
+    ],
+  },
+  {
+    year: 2018,
+    items: [
+      {
+        title: 'Backdooring With Metadata',
+        url: 'https://www.ikotler.org/docs/BackdooringWithMetadata.pdf',
+        venue: 'CircleCityCon',
+      },
+      {
+        title: 'Backdooring With Metadata',
+        url: 'https://www.ikotler.org/docs/BackdooringWithMetadata.pdf',
+        venue: 'Converge Conference',
+      },
+      {
+        title: 'Heroes, Villains and Simulation of Adversaries',
+        url: 'https://secure360.org/session/itzik-kotler-heroes-villains-and-simulation-of-adversaries/?conference=9826&date=20180516',
+        venue: 'Secure360 Twin Cities',
+      },
+    ],
+  },
+  {
+    year: 2017,
+    items: [
+      {
+        title: 'Malwares From Thin Bits',
+        url: 'https://www.ikotler.org/docs/MalwaresFromThinBits.pdf',
+        venue: 'BSidesDFW',
+      },
+      {
+        title: 'Weaponizing Threat Intelligence',
+        url: 'http://c.ymcdn.com/sites/www.issa.org/resource/resmgr/2017_international_conference/Detailed_Agenda_2017.pdf',
+        coauthor: 'Steve Mason',
+        venue: 'ISSA International Conference',
+      },
+      {
+        title: 'The Adventures of AV and the Leaky Sandbox',
+        url: 'https://www.defcon.org/html/defcon-25/dc-25-speakers.html#Kotler',
+        coauthor: 'Amit Klein',
+        venue: 'DEF CON',
+      },
+      {
+        title: 'The Adventures of AV and the Leaky Sandbox',
+        url: 'https://www.blackhat.com/us-17/briefings.html#the-adventures-of-av-and-the-leaky-sandbox',
+        coauthor: 'Amit Klein',
+        venue: 'Black Hat USA',
+      },
+      {
+        title: "I'm In Your $PYTHONPATH, Backdooring Your Python Programs",
+        url: 'https://www.ikotler.org/docs/InYourPythonPath.pdf',
+        venue: 'THOTCON',
+      },
+    ],
+  },
+  {
+    year: 2016,
+    items: [
+      {
+        title: 'Just Got PWND.sh',
+        url: 'https://www.ikotler.org/docs/JustGotPWND.pdf',
+        venue: 'SkyDogCon',
+      },
+      {
+        title: 'Breach Your Own Castle: Suit Up and Play Offense for Better Security',
+        url: 'http://www.isaca.org/restricted/csx-presentations/Documents/North-America/121.pdf',
+        venue: 'ISACA CSX North America',
+      },
+      {
+        title: 'Crippling HTTPS with Unholy PAC',
+        url: 'https://www.blackhat.com/us-16/briefings.html#crippling-https-with-unholy-pac',
+        coauthor: 'Amit Klein',
+        venue: 'Black Hat USA',
+      },
+      {
+        title: 'In Plain Sight: The Perfect Exfiltration',
+        url: 'https://conference.hitb.org/hitbsecconf2016ams/sessions/in-plain-sight-the-perfect-exfiltration/',
+        coauthor: 'Amit Klein',
+        venue: 'Hack In The Box Amsterdam',
+      },
+      {
+        title: 'Goodbye Data, Hello Exfiltration',
+        url: 'http://bsidesorlando.org/2016/itzik-kotler-goodbye-data-hello-exfiltration',
+        venue: 'BSides Orlando',
+      },
+      {
+        title: 'Hacking Inward - Implementing Effective Cyber War Games',
+        url: 'https://www.rsaconference.com/events/us16/agenda/sessions/2618/hacking-inward-implementing-effective-cyber-war',
+        venue: 'RSA Conference USA',
+      },
+    ],
+  },
+  {
+    year: 2015,
+    items: [
+      {
+        title: 'Learning From The BlackHats - Proactive, Offense Approach To Security',
+        url: 'https://web.archive.org/web/20151009130555/http://nymjcsc.org/agenda.htm',
+        coauthor: 'Danelle Au',
+        venue: 'NYMJCSC',
+      },
+    ],
+  },
+  {
+    year: 2013,
+    items: [
+      {
+        title: 'Intro to Hackersh, Workshop',
+        url: 'https://www.blacklodgeresearch.org/archive/intro-hackersh/',
+        venue: 'Black Lodge Research',
+      },
+      {
+        title: "Hack Like It's 2013 with Pythonect and Hackersh",
+        url: 'https://www.ikotler.org/docs/HackLikeIts2013_RVASec.pdf',
+        venue: 'RVAsec',
+      },
+      {
+        title: 'Hack and Slash with Pythonect',
+        url: 'https://www.ikotler.org/docs/HackandSlashwithPythonect.pdf',
+        venue: 'HackMiami',
+      },
+      {
+        title: 'Pythonect-Fu: From Function to Language',
+        url: 'http://www.nosuchcon.org/talks/D1_06_Itzik_Pythonect-Fu.pdf',
+        venue: 'NoSuchCon',
+      },
+      {
+        title: "Hack Like It's 2013 (The Workshop)",
+        url: 'https://conference.hitb.org/hitbsecconf2013ams/materials/D1LAB%20-%20Itzik%20Kotler%20-%20Hack%20Like%20It%27s%202013.pdf',
+        venue: 'Hack In The Box Amsterdam',
+      },
+    ],
+  },
+  {
+    year: 2011,
+    items: [
+      {
+        title: 'All Your Mobile Applications Are Belong To Us',
+        url: 'https://www.ikotler.org/docs/AllYourMobileAppsAreBelongToUs_OWASP2011IL.pdf',
+        venue: 'OWASP Israel Annual Conference',
+      },
+      {
+        title: 'Sounds Like Botnet',
+        url: 'https://www.ikotler.org/docs/SoundsLikeBotnet_DC19_n_BSidesLV11.pdf',
+        coauthor: 'Iftach Ian Amit',
+        venue: 'DEF CON',
+      },
+      {
+        title: 'Represent! Defcon Groups, Hackerspaces, and You (Panel)',
+        url: 'https://www.defcon.org/html/links/dc-archives/dc-19-archive.html#PanelDCG',
+        venue: 'DEF CON',
+      },
+      {
+        title: 'Sounds Like Botnet',
+        url: 'https://www.ikotler.org/docs/SoundsLikeBotnet_DC19_n_BSidesLV11.pdf',
+        coauthor: 'Iftach Ian Amit',
+        venue: 'BSides Las Vegas',
+      },
+      {
+        title: 'Let Me Stuxnet You',
+        url: 'http://conference.hackinthebox.org/hitbsecconf2011ams/materials/D2T1%20-%20Itzik%20Kotler%20-%20Let%20Me%20Stuxnet%20You.pdf',
+        venue: 'Hack In The Box Amsterdam',
+      },
+      {
+        title: 'Let Me Stuxnet You',
+        url: 'https://www.ikotler.org/docs/hes2011-ikolterletmestuxnetyou.pdf',
+        venue: 'Hackito Ergo Sum',
+      },
+      {
+        title: 'Industrial Cyber Warfare Already Here',
+        url: 'http://www.slideshare.net/itzikk/cyber-warfare-already-here',
+        venue: 'France Israel Annual Cyber Security Forum',
+      },
+    ],
+  },
+  {
+    year: 2010,
+    items: [
+      { title: 'Hackers to CSO (Panel)', venue: 'Congresso Security Leaders' },
+      {
+        title: 'Turbot - A Next Generation Botnet',
+        url: 'http://www.hackitoergosum.org/2010/HES2010-ikolter-zgadot-Turbot-Next-Generation-Botnet.pdf',
+        coauthor: 'Ziv Gadot',
+        venue: 'Hackito Ergo Sum',
+      },
+    ],
+  },
+  {
+    year: 2009,
+    items: [
+      {
+        title: 'The Day of the Updates',
+        url: 'http://www.defcon.org/images/defcon-17/dc-17-presentations/defcon-17-itzik_kotler-tomer_bitton-day_of_updates.pdf',
+        coauthor: 'Tomer Bitton',
+        venue: 'DEF CON',
+      },
+    ],
+  },
+  {
+    year: 2008,
+    items: [
+      { title: 'Malware 2.0', coauthor: 'Jonathan Rom', venue: 'RSA Conference Europe' },
+      {
+        title: 'Jinx - Malware 2.0',
+        url: 'http://www.blackhat.com/presentations/bh-usa-08/Kotler_Rom/BH_US_08_Kotler_Rom_Jinx_Malware.pdf',
+        coauthor: 'Jonathan Rom',
+        venue: 'Black Hat USA',
+      },
+    ],
+  },
+  {
+    year: 2006,
+    items: [
+      {
+        title: 'Shellcode Evolution',
+        url: 'http://www.h2hc.com.br/repositorio/2006/itzik_kotler_shellcode_evolution.ppt',
+        venue: 'Hackers 2 Hackers (H2HC) São Paulo',
+      },
+      {
+        title: 'Advanced Buffer Overflow Methods',
+        url: 'http://www.cs.tau.ac.il/tausec/lectures/Advanced_Buffer_Overflow_Methods.ppt',
+        venue: 'Tel-Aviv University Security Forum',
+      },
+    ],
+  },
+  {
+    year: 2005,
+    items: [
+      {
+        title: 'Advanced Buffer Overflow Methods',
+        url: 'http://events.ccc.de/congress/2005/fahrplan/attachments/538-Slides_AdvancedBufferOverflowMethods.ppt',
+        venue: '22nd Chaos Communication Congress (22C3)',
+      },
+    ],
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Talks</h1>
+      <p class="subtitle">I love presenting research, meeting people, and traveling.</p>
+      {
+        talks.map((group) => (
+          <div class="year-group">
+            <h2>{group.year}</h2>
+            <ul>
+              {group.items.map((talk) => (
+                <li>
+                  {talk.url ? (
+                    <a href={talk.url} target="_blank" rel="noopener">
+                      {talk.title}
+                    </a>
+                  ) : (
+                    <span>{talk.title}</span>
+                  )}
+                  {talk.coauthor && <span class="coauthor"> w/ {talk.coauthor}</span>}
+                  <span class="venue"> @ {talk.venue}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .subtitle {
+    color: rgb(var(--gray));
+    margin-bottom: 2em;
+  }
+
+  .year-group {
+    margin-bottom: 2em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    margin-top: 0;
+    color: rgb(var(--black));
+    border-bottom: 1px solid rgb(var(--gray-light));
+    padding-bottom: 0.2em;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    padding: 0.3em 0;
+    line-height: 1.5;
+    padding-left: 1.2em;
+    text-indent: -1.2em;
+  }
+
+  li::before {
+    content: '* ';
+    color: rgb(var(--gray));
+  }
+
+  .coauthor {
+    color: rgb(var(--gray));
+  }
+
+  .venue {
+    color: rgb(var(--gray));
+    font-size: 0.9em;
+  }
+</style>

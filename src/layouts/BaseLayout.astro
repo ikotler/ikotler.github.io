@@ -11,21 +11,25 @@ export interface Props {
 }
 const { title, description, permalink, current } = Astro.props;
 ---
+
 <html lang="en">
-<head>
-  <BaseHead title={title} description={description} permalink={permalink} />
-</head>
-<body>
-  <div class="layout">
-    <Header current={current} />
+  <head>
+    <BaseHead title={title} description={description} permalink={permalink} />
+    <slot name="head" />
+  </head>
+  <body>
+    <div class="layout">
+      <Header current={current} />
+      <div class="tui-rule" aria-hidden="true"></div>
 
-    <main>
-      <slot />
-    </main>
+      <main>
+        <slot />
+      </main>
 
-    <Footer />
-  </div>
-</body>
+      <div class="tui-rule" aria-hidden="true"></div>
+      <Footer />
+    </div>
+  </body>
 </html>
 
 <style>
@@ -34,6 +38,24 @@ const { title, description, permalink, current } = Astro.props;
     flex-direction: column;
     min-height: 100%;
     min-height: 100vh;
+  }
+
+  .tui-rule {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    color: var(--primary-color);
+    font-family: 'Web437 IBM VGA 8x16', monospace;
+    -webkit-font-smoothing: none;
+    opacity: 0.4;
+    font-size: 14px;
+    line-height: 1;
+    padding: 0 2em;
+    box-sizing: border-box;
+  }
+
+  .tui-rule::before {
+    content: '────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────';
   }
 
   main {

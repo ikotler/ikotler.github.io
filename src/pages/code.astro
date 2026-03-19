@@ -1,0 +1,93 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+const title = 'Code | Itzik Kotler';
+const description = 'Selected open source projects by Itzik Kotler.';
+
+const projects = [
+  {
+    name: 'Hackersh',
+    url: 'http://www.hackersh.org',
+    description:
+      'A free and open source shell written in Python with Pythonect-like syntax, builtin security commands, and out-of-the-box wrappers for various security tools. Like Unix pipeline, but for processing security information and metadata. Referenced in the <a href="https://books.google.com/books?id=NyyvAgAAQBAJ&q=hackersh" target="_blank" rel="noopener">Anti-Hacker Tool Kit, Fourth Edition</a>.',
+  },
+  {
+    name: 'Pythonect',
+    url: 'http://www.pythonect.org',
+    description:
+      'A new, experimental, general-purpose dataflow programming language based on Python. Provides both a visual programming language and a text-based scripting language combining the quick feel of shell scripting with the power of Python.',
+  },
+  {
+    name: 'Pytroj',
+    url: 'https://github.com/jgeralnik/Pytroj',
+    description:
+      'A proof-of-concept malware that infects Python compiled files (*.pyc). Symantec covered it in a blog post titled <a href="https://web.archive.org/web/20121227063247/http://www.symantec.com/connect/blogs/python-has-venom" target="_blank" rel="noopener">"This Python Has Venom!"</a>.',
+  },
+  {
+    name: 'Moshi Moshi',
+    url: 'https://code.google.com/p/moshimoshi/',
+    description:
+      'A proof-of-concept bot that communicates over VoIP, dialing out using SIP and using DTMF tones as input and text-to-speech as output. Discussed in <a href="https://books.google.com/books?id=9lmatCF6L7YC&pg=PA117" target="_blank" rel="noopener">Unified Communications Forensics</a>.',
+  },
+  {
+    name: 'IPPON',
+    url: 'https://code.google.com/p/ippon-mitm/',
+    description:
+      'A tool exploiting update mechanisms via man-in-the-middle attacks to inject fake or hijacked software updates. Discussed in <a href="https://books.google.com/books?id=_22wK66-Dh8C&dq=ippon-mitm" target="_blank" rel="noopener">Hacking Exposed Wireless, Second Edition</a>.',
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Code</h1>
+      <p class="subtitle">
+        A selection of open source work — more on <a
+          href="https://github.com/ikotler"
+          target="_blank"
+          rel="noopener">GitHub</a
+        >.
+      </p>
+      {
+        projects.map((project, index) => (
+          <div>
+            {index !== 0 && <hr />}
+            <div class="project-item">
+              <h2>
+                <a href={project.url} target="_blank" rel="noopener">
+                  {project.name}
+                </a>
+              </h2>
+              <p set:html={project.description} />
+            </div>
+          </div>
+        ))
+      }
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .subtitle {
+    color: rgb(var(--gray));
+    margin-bottom: 2em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+    margin-bottom: 0.3em;
+  }
+
+  .project-item {
+    padding: 0.5em 0;
+  }
+</style>

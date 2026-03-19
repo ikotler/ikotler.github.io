@@ -1,27 +1,60 @@
 ---
-import Logo from './Logo.astro'
-import Nav from './Nav.astro'
-
-const { current = '' } = Astro.props;
+import { SITE_TITLE } from '../consts';
+import HeaderLink from './HeaderLink.astro';
 ---
+
+<header>
+  <nav>
+    <h2><a href="/">{SITE_TITLE}</a></h2>
+    <div class="internal-links">
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/code">Code</HeaderLink>
+      <HeaderLink href="/talks">Talks</HeaderLink>
+      <HeaderLink href="/writing">Writing</HeaderLink>
+      <a href="http://blog.ikotler.org" target="_blank" rel="noopener">Blog</a>
+    </div>
+  </nav>
+</header>
 
 <style>
   header {
-    display: flex;
-    margin: 0 auto;
-    max-width: 1400px;
-    padding: 2em;
-    width: 100%;
+    margin: 0;
+    padding: 0 1em;
+    background: #181825; /* Mantle */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 30%);
   }
-
-  @media screen and (max-width: 520px) {
-    header {
-      padding: 2em 0;
+  h2 {
+    margin: 0;
+    font-size: 1em;
+  }
+  h2 a,
+  h2 a.active {
+    text-decoration: none;
+    font-family: 'CP437', monospace;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav a {
+    padding: 1em 0.5em;
+    color: rgb(var(--black));
+    border-bottom: 4px solid transparent;
+    text-decoration: none;
+    font-family: 'CP437', monospace;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+  }
+  nav a.active {
+    text-decoration: none;
+    border-bottom-color: var(--accent-dark); /* Mauve for active state */
+  }
+  @media (max-width: 720px) {
+    .internal-links {
+      display: none;
     }
   }
 </style>
-
-<header>
-  <Logo />
-  <Nav current={current} />
-</header>

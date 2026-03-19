@@ -8,8 +8,10 @@ const { current = '' } = Astro.props;
     align-items: center;
     display: flex;
     flex: 1;
-    font-family: var(--font-family-sans);
-    font-weight: 700;
+    font-family: 'Web437 IBM VGA 8x16', monospace;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+    font-weight: normal;
     justify-content: flex-end;
     text-transform: uppercase;
   }
@@ -19,35 +21,27 @@ const { current = '' } = Astro.props;
     text-decoration: none;
     padding: 10px 5px;
     display: block;
-    position: relative;
-    margin-left: 20px;
-    min-width: 70px;
+    margin-left: 16px;
     text-align: center;
+    opacity: 0.6;
+    transition: opacity 0.15s ease;
   }
 
-  a:not(.selected) {
-    opacity: 0.7;
+  a:hover {
+    opacity: 1;
   }
 
-  a::before {
-    content: '';
-    position: absolute;
-    transition: transform .3s ease;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--text-secondary);
-    transform: scaleX(0);
+  a.selected {
+    opacity: 1;
+    color: var(--primary-color);
   }
 
-  a:hover::before,
-  .selected::before {
-    transform: scaleX(1);
+  a.selected::before {
+    content: '[ ';
   }
 
-  .selected::before {
-    background: var(--primary-color);
+  a.selected::after {
+    content: ' ]';
   }
 
   .theme-toggle-container {
@@ -59,14 +53,15 @@ const { current = '' } = Astro.props;
       margin-right: 1em;
     }
   }
-
 </style>
 
 <nav>
-  <a class={current === "" ? "selected" : ""} href='/'>home</a>
-  <a class={current === "about" ? "selected" : ""} href='/about'>about</a>
-  <a class={current === "blog" ? "selected" : ""} href='/blog'>blog</a>
+  <a class={current === '' ? 'selected' : ''} href="/">home</a>
+  <a class={current === 'projects' ? 'selected' : ''} href="/projects">code</a>
+  <a class={current === 'talks' ? 'selected' : ''} href="/talks">talks</a>
+  <a class={current === 'writing' ? 'selected' : ''} href="/writing">writing</a>
+  <a href="http://blog.ikotler.org" target="_blank" rel="noopener">blog</a>
   <div class="theme-toggle-container">
-    <ThemeToggleButton client:load />
+    <ThemeToggleButton client:only="svelte" />
   </div>
 </nav>

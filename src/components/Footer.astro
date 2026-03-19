@@ -1,19 +1,26 @@
+---
+const today = new Date();
+---
+
 <footer>
-  <span>
-    &copy; {new Date().getFullYear()} Your Blog.
-    Powered by <a href="https://astro.build" target="_blank" rel="noopener">Astro</a>.
-    Template by <a href="https://www.twitter.com/Charca" target="_blank" rel="noopener">Maxi Ferreira</a>.
-  </span>
+  ☺ {today.getFullYear()} Itzik Kotler
+  <span class="sep">|</span>
+  <a href="https://twitter.com/itzikkotler" target="_blank" rel="noopener">Twitter</a>
+  <span class="sep">|</span>
+  <a href="https://www.linkedin.com/in/itzikk/" target="_blank" rel="noopener">LinkedIn</a>
 </footer>
 
 <style>
   footer {
-    color: var(--text-secondary);
-    font-size: .8em;
-    margin: 1em auto;
-    max-width: 1400px;
-    padding: 1em 2em;
+    padding: 2em 1em;
+    background: #181825;
+    color: rgb(var(--gray));
     text-align: center;
-    width: 100%;
+    font-size: 0.9em;
+  }
+
+  .sep {
+    margin: 0 0.5em;
+    opacity: 0.4;
   }
 </style>

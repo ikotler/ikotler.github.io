@@ -1,0 +1,268 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+const title = 'Writing | Itzik Kotler';
+const description = 'Articles, blog posts, and publications by Itzik Kotler.';
+
+const writing = [
+  {
+    year: '2015 – 2020',
+    items: [
+      {
+        title: 'In Cybersecurity, Best Practices Are The Worst',
+        url: 'https://www.forbes.com/sites/forbestechcouncil/2020/05/29/in-cybersecurity-best-practices-are-the-worst/',
+        venue: 'Forbes',
+      },
+      {
+        title: 'Hackers Play Dirty, So Practice Good Digital Hygiene',
+        url: 'https://www.forbes.com/sites/forbestechcouncil/2020/04/01/hackers-play-dirty-so-practice-good-digital-hygiene/',
+        venue: 'Forbes',
+      },
+      {
+        title: 'Fear And Loathing In Cyberspace',
+        url: 'https://www.forbes.com/sites/forbestechcouncil/2020/03/04/fear-and-loathing-in-cyberspace/',
+        venue: 'Forbes',
+      },
+      {
+        title: 'To Break The Rules Of Cybersecurity, You Must Know The Rules Of Cybersecurity',
+        url: 'https://www.forbes.com/sites/forbestechcouncil/2020/02/12/to-break-the-rules-of-cybersecurity-you-must-know-the-rules-of-cybersecurity/',
+        venue: 'Forbes',
+      },
+      {
+        title: "Don't Let Your Fear Of Nation-State Hackers Blind You",
+        url: 'https://www.forbes.com/sites/forbestechcouncil/2019/12/02/dont-let-your-fear-of-nation-state-hackers-blind-you/',
+        venue: 'Forbes',
+      },
+      {
+        title: 'Demystifying Criminal Hackers',
+        url: 'https://www.forbes.com/sites/forbestechcouncil/2019/09/19/demystifying-criminal-hackers/',
+        venue: 'Forbes',
+      },
+      {
+        title: "Defending Against Hacking's Long Game: It Ain't Over Til It's Over",
+        url: 'https://www.forbes.com/sites/forbestechcouncil/2019/08/02/defending-against-hackings-long-game-it-aint-over-til-its-over/',
+        venue: 'Forbes',
+      },
+      {
+        title: "Advanced Persistent Threats: Calling The Hackers' Bluffs",
+        url: 'https://www.forbes.com/sites/forbestechcouncil/2019/06/21/advanced-persistent-threats-calling-the-hackers-bluffs/',
+        venue: 'Forbes',
+      },
+      {
+        title: 'When Good Tech Goes Bad',
+        url: 'https://www.forbes.com/sites/forbestechcouncil/2019/05/24/when-good-tech-goes-bad/',
+        venue: 'Forbes',
+      },
+      {
+        title: 'Do You Do Security Due Diligence Before A Merger Or Acquisition?',
+        url: 'https://www.forbes.com/sites/forbestechcouncil/2019/03/01/do-you-do-security-due-diligence-before-a-merger-or-acquisition/',
+        venue: 'Forbes',
+      },
+      {
+        title: 'Staying One Step Ahead Of Criminal Hackers',
+        url: 'https://www.forbes.com/sites/forbestechcouncil/2018/11/30/staying-one-step-ahead-of-criminal-hackers/',
+        venue: 'Forbes',
+      },
+      {
+        title: "Were You Attacked Today With Yesterday's Hacking Technique?",
+        url: 'https://www.forbes.com/sites/forbestechcouncil/2018/08/22/were-you-attacked-today-with-yesterdays-hacking-technique/',
+        venue: 'Forbes',
+      },
+      {
+        title: 'Fixating On Vulnerabilities Is A Vulnerability',
+        url: 'https://www.forbes.com/sites/forbestechcouncil/2018/06/05/fixating-on-vulnerabilities-is-a-vulnerability/',
+        venue: 'Forbes',
+      },
+      {
+        title: 'The Key To Cybersecurity: Shared Intelligence And Industry Cooperation',
+        url: 'https://www.forbes.com/sites/forbestechcouncil/2017/02/15/the-key-to-cybersecurity-shared-intelligence-and-industry-cooperation/',
+        venue: 'Forbes',
+      },
+    ],
+  },
+  {
+    year: '2012 – 2013',
+    items: [{ title: 'Personal Blog', url: 'http://blog.ikotler.org', venue: 'blog.ikotler.org' }],
+  },
+  {
+    year: 2011,
+    items: [
+      {
+        title: '(Hebrew) כשהווירוס מחייג אליך למשרד',
+        url: 'http://www.calcalist.co.il/internet/articles/0,7340,L-3552387,00.html',
+        venue: 'Calcalist',
+      },
+      {
+        title: 'Botnet That Dial Home',
+        url: 'http://hakin9.org/hakin9-extra-botnet-052011/',
+        venue: 'Hakin9 Magazine, Extra Issue (October)',
+      },
+      {
+        title: 'Can You Hear Them Hacking',
+        url: 'http://secvoip.com/2011/09/can-you-hear-them-hacking/',
+        venue: 'SecVoip Blog',
+      },
+      {
+        title: 'Ready or Not Industrial Cyber Warfare Comes',
+        venue: 'Enterprise IT Security Magazine (May)',
+      },
+      {
+        title: 'Click, Click, Boom: Industrial Cyber Warfare Already Here',
+        url: 'http://www.globalsecuritymag.com/Analysis-by-Itzik-Kotler-CTO-of,20110331,22905.html',
+        venue: 'Global Security Magazine',
+      },
+    ],
+  },
+  {
+    year: 2009,
+    items: [
+      {
+        title: 'Malware Attacks the Software Update Process',
+        url: 'http://esj.com/articles/2009/12/01/malware-software-updates.aspx',
+        venue: 'Enterprise Systems Journal',
+      },
+    ],
+  },
+  {
+    year: 2008,
+    items: [
+      {
+        title: 'The Dangers of Web 2.0',
+        url: 'http://www.securitymattersmag.com/security-matters-magazine-article-detail.php?id=331',
+        venue: 'Security Matters Magazine',
+      },
+      {
+        title: 'Web 2.0: Attack of the JavaScript Malware',
+        url: 'http://www.scmagazine.com/web-20-attack-of-the-javascript-malware/article/113132/',
+        venue: 'SC Magazine US',
+      },
+    ],
+  },
+  {
+    year: 2007,
+    items: [{ title: 'Shellcodes Evolution', venue: 'Hakin9 Magazine, Issue 1 (January)' }],
+  },
+  {
+    year: 2006,
+    items: [
+      {
+        title: 'Exploiting with linux-gate.so.1',
+        url: 'http://www.exploit-db.com/papers/13187/',
+        venue: 'NewOrder Newsletter, Issue 13',
+      },
+    ],
+  },
+  {
+    year: 2005,
+    items: [
+      {
+        title: 'Linux Improvised Userland Scheduler Virus',
+        url: 'http://www.uninformed.org/?v=3&a=6',
+        venue: 'Uninformed Journal, Volume 3',
+      },
+      {
+        title: 'Smack the Stack (Advanced Buffer Overflow Methods)',
+        url: 'http://events.ccc.de/congress/2005/fahrplan/attachments/539-Paper_AdvancedBufferOverflowMethods.pdf',
+        venue: 'Proceedings of 22C3',
+      },
+      {
+        title: 'Reverse Engineering with LD_PRELOAD',
+        url: 'http://securityvulns.com/articles/reveng/',
+        venue: 'NewOrder Website',
+      },
+      {
+        title: 'Abusing .CTORS and .DTORS for Fun and Profit',
+        url: 'http://www.exploit-db.com/papers/13234/',
+        venue: 'NewOrder Website',
+      },
+      {
+        title: '10,000 Monkeys and a Webpage',
+        url: 'http://web.textfiles.com/hacking/10kmnkysnweb.txt',
+        venue: 'NewOrder Newsletter, Issue 12',
+      },
+    ],
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Writing</h1>
+      <p class="subtitle">Articles, publications, and blog posts over the years.</p>
+      {
+        writing.map((group) => (
+          <div class="year-group">
+            <h2>{group.year}</h2>
+            <ul>
+              {group.items.map((item) => (
+                <li>
+                  {item.url ? (
+                    <a href={item.url} target="_blank" rel="noopener">
+                      {item.title}
+                    </a>
+                  ) : (
+                    <span>{item.title}</span>
+                  )}
+                  <span class="venue"> — {item.venue}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .subtitle {
+    color: rgb(var(--gray));
+    margin-bottom: 2em;
+  }
+
+  .year-group {
+    margin-bottom: 2em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    margin-top: 0;
+    color: rgb(var(--black));
+    border-bottom: 1px solid rgb(var(--gray-light));
+    padding-bottom: 0.2em;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    padding: 0.3em 0;
+    line-height: 1.5;
+    padding-left: 1.2em;
+    text-indent: -1.2em;
+  }
+
+  li::before {
+    content: '* ';
+    color: rgb(var(--gray));
+  }
+
+  .venue {
+    color: rgb(var(--gray));
+    font-size: 0.9em;
+  }
+</style>
