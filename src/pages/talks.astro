@@ -283,9 +283,7 @@ const talks = [
               {group.items.map((talk) => (
                 <li>
                   {talk.url ? (
-                    <a href={talk.url} target="_blank" rel="noopener">
-                      {talk.title}
-                    </a>
+                    <a href={talk.url} target="_blank" rel="noopener">{talk.title}</a>
                   ) : (
                     <span>{talk.title}</span>
                   )}
