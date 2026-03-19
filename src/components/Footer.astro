@@ -3,7 +3,7 @@ const today = new Date();
 ---
 
 <footer>
-  ☺ {today.getFullYear()} Itzik Kotler
+  <span class="smiley"><span class="open">☺</span><span class="full">☻</span></span> {today.getFullYear()} Itzik Kotler
   <span class="sep">|</span>
   <a href="https://x.com/itzikkotler" target="_blank" rel="noopener">Twitter</a>
   <span class="sep">|</span>
@@ -22,5 +22,21 @@ const today = new Date();
   .sep {
     margin: 0 0.5em;
     opacity: 0.4;
+  }
+
+  .smiley {
+    cursor: default;
+  }
+
+  .smiley .full {
+    display: none;
+  }
+
+  .smiley:hover .open {
+    display: none;
+  }
+
+  .smiley:hover .full {
+    display: inline;
   }
 </style>
